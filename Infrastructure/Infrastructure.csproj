@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Book.cs" />
     <Compile Include="Enums\GenderEnum.cs" />
     <Compile Include="Enums\StatusEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
