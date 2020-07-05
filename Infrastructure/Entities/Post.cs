@@ -19,8 +19,8 @@ namespace Infrastructure
 
         #region Relation
 
-        [Key]
-        [Column(Order = 1)]
+        //[Key]
+        //[Column(Order = 1)]
         [ForeignKey("User")]
         public string User_Id { get; set; }
 

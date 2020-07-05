@@ -15,8 +15,6 @@ namespace Infrastructure.Entities
         public string Content { get; set; }
         #region Relation
 
-        [Key]
-        [Column(Order = 2)]
         [ForeignKey("Post")]
         public Guid Post_Id { get; set; }
 

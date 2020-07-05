@@ -35,10 +35,11 @@ namespace Infrastructure.Entities
         public Boolean IsBestSeller { get; set; }
         public int Stock { get; set; }
         #region Relation
-        [Key]
-        [Column(Order = 1)]
+        //[Key]
+        //[Key,Column(Order = 1)]
         [ForeignKey("Publisher")]
         public Guid Publisher_Id { get; set; }
+        //[Required]
         public virtual Publisher Publisher { get; set; }
         public virtual ICollection<Book_Author> Book_Authors { get; set; }
         public virtual ICollection<Book_Genre> Book_Genres { get; set; }

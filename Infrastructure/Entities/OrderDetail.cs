@@ -10,6 +10,10 @@ namespace Infrastructure.Entities
 {
     public class OrderDetail
     {
+        public OrderDetail()
+        {
+            SubPrice = Quantity * Price;
+        }
         public int Quantity { get; set; }
         public int Price { get; set; }
 
