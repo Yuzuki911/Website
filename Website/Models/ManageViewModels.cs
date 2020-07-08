@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Infrastructure.Enums;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
@@ -12,6 +14,35 @@ namespace Website.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+    }
+    public class UpdateUserViewModel
+    {
+        public string Id { get; set; }
+
+        [Display(Name = "Địa chỉ")]
+        [StringLength(100)]
+        public string Address { get; set; }
+
+        [Display(Name = "Giới tính")]
+        public GenderEnum Gender { get; set; }
+
+        [StringLength(100)]
+        [Display(Name = "Họ và tên")]
+        public string FullName { get; set; }
+
+        [Display(Name = "Trạng thái")]
+        public StatusEnum Status { get; set; }
+
+        [Display(Name = "Email")]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Display(Name = "Số điện thoại")]
+        public string PhoneNumber { get; set; }
+
+        public string Avatar { get; set; }
+
+        public DateTime CreatedDate { get; set; }
     }
 
     public class ManageLoginsViewModel
