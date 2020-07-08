@@ -13,7 +13,7 @@ namespace Website.Modules
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(Assembly.Load("ApplicationCore"))
+            builder.RegisterAssemblyTypes(Assembly.Load("Core"))
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces()
                 .InstancePerLifetimeScope();
