@@ -340,7 +340,7 @@
     function PopupModal(id) {
         //var id = $('#popup').attr("data-new");
         $.ajax({
-            type:'POST',
+            type: 'POST',
             url: '/Home/DetailPopup',
             dataType: 'json',
             data: { Id: id },
@@ -349,15 +349,20 @@
                 var html = '';
                 html += '<div class="product-images">';
                 html += '<div class="main-image images">';
-                html += '<img alt="big images" src="/Content/assets/images/books/' + res.Book_Cover + '">';
+                html += '<img alt="big images" style="width:300px;height:450px" src="/Content/assets/images/books/' + res.Book_Cover + '">';
                 html += '</div></div>';
                 html += ' <div class="product-info">';
                 html += '<h1>' + res.Title + '</h1>';
+                html += '<div class="quick-desc"> ' + res.Excerpt + ' </div >';
+                html += '<br/>';
                 html += '<div class="price-box-3">';
                 html += '<div class="s-price-box">';
-                html += '<span class="new-price"></span>';
+                var price = res.Price;
+                price = price.toLocaleString('de-DE');
+                html += '<span class="new-price">' + price + ' VNĐ </span>';
                 html += ' </div>';
                 html += ' </div>';
+                html += '<br/>';
                 html += '<div class="social-sharing">';
                 html += '<div class="widget widget_socialsharing_widget">';
                 html += '<h3 class="widget-title-modal">Share this product</h3>';
